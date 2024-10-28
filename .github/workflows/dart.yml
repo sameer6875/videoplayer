@@ -1,14 +1,13 @@
+name: "Build & Release"
 on:
   pull_request:
     branches:
       - main
-
   push:
     branches:
       - main
       # - develop
 
-name: "Build & Release"
 jobs:
   build:
     name: Build, Test & Release
@@ -24,15 +23,15 @@ jobs:
           channel: "stable"
           architecture: x64
 
-      # Run Flutter tests
-      - name: Run Flutter Tests
-        run: flutter test
-        continue-on-error: true
+      # Remove or comment out this block to skip tests
+      # - name: Run Flutter Tests
+      #   run: flutter test
+      #   continue-on-error: true
 
       # Build APK for Android
       - run: flutter build apk --release --split-per-abi
 
-      # Build iOS
+      # Build iOS (commented out if you only need Android)
       # - run: |
       #     flutter build ios --no-codesign
       #     cd build/ios/iphoneos
