@@ -5,9 +5,10 @@ import 'package:video_player/video_player.dart';
 class VideoPlayerScreen extends StatefulWidget {
   final String videoPath;
 
-  VideoPlayerScreen({required this.videoPath});
+  const VideoPlayerScreen({required this.videoPath});
 
   @override
+  // ignore: library_private_types_in_public_api
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
 }
 
@@ -44,7 +45,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
-            : CircularProgressIndicator(),
+            : const CircularProgressIndicator(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

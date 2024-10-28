@@ -5,7 +5,7 @@ import 'video_player_screen.dart';
 class VideoListScreen extends StatelessWidget {
   final List<FileSystemEntity> videos;
 
-  VideoListScreen({required this.videos});
+  const VideoListScreen({super.key, required this.videos});
 
   @override
   Widget build(BuildContext context) {
